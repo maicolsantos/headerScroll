@@ -1,13 +1,13 @@
-import React from 'react'
-import { View, Text, Button } from 'react-native'
-import { createAppContainer } from 'react-navigation'
-import { createStackNavigator } from 'react-navigation-stack'
+import React from 'react';
+import {View, Text, Button} from 'react-native';
+import {createAppContainer} from 'react-navigation';
+import {createStackNavigator} from 'react-navigation-stack';
 
-import HeaderScroll from './HeaderScroll'
+import HeaderScroll from './HeaderScroll';
 
-console.disableYellowBox = true
+console.disableYellowBox = true;
 
-const Home = ({ navigation }) => (
+const Home = ({navigation}) => (
   <View>
     <Text>Home</Text>
     <Button
@@ -15,19 +15,18 @@ const Home = ({ navigation }) => (
       onPress={() => navigation.navigate('HeaderScroll')}
     />
   </View>
-)
-
+);
 
 const App = createAppContainer(
   createStackNavigator({
     Home: {
       screen: Home,
       navigationOptions: {
-        headerTitle: <Text>Home Page</Text>
-      }
+        headerTitle: <Text>Home Page</Text>,
+      },
     },
     HeaderScroll,
-  })
-)
+  }),
+);
 
-export default App
+export default App;
